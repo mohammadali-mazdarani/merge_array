@@ -76,6 +76,9 @@ for(int i = 0; i<len; ++i)
     cout<<endl;
 }
 
+
+//Create array2 and sort
+
 getch();
 }
 //function variable
