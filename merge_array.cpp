@@ -273,6 +273,9 @@ else
 
 }
 
+
+//copy the rest of v1 or v2 to merge array
+
 if(i < len1)
 {
 
@@ -288,6 +291,7 @@ a[k++] = v2[j++];
 }
 
 return a;
+
 }
 
 
