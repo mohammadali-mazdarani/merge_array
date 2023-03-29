@@ -79,6 +79,61 @@ for(int i = 0; i<len1; ++i)
 
 //Create array2 and sort
 
+//sepwrator
+
+cout<<endl<<endl<<"--------------------------------------"<<endl<<endl;
+//sepwrator
+
+cout<<endl<<endl<<"--------------------------------------"<<endl<<endl;
+
+//Define array2 length
+int len2 = 5;
+
+//Define pointer array
+int *b;
+
+//Define dynamic array
+b = new int[len2];
+
+//This command for generate number with random
+srand((unsigned)time(NULL));
+
+//Get array2 value with randome value
+for (int i=0; i<len2; ++i)
+{
+
+b[i] = rand()%50+1; //30 for get number in poriod of 0 ~ 30
+
+}
+
+//show array2 Before sort 
+
+cout<<"Show array2 Before sort : "<<endl;
+
+for(int i = 0; i<len2; ++i)
+{
+    cout<<"b["<<i<<"] = "<<b[i];
+    cout<<endl;
+}
+
+//sepwrator
+
+cout<<endl<<endl<<"--------------------------------------"<<endl<<endl;
+
+//selection sort
+
+selection_sort(b , len2);
+
+//show array after sort 
+
+cout<<"Show array2 after sort : "<<endl;
+
+for(int i = 0; i<len2; ++i)
+{
+    cout<<"b["<<i<<"] = "<<b[i];
+    cout<<endl;
+}
+
 getch();
 }
 //function variable
