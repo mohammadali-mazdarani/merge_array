@@ -29,7 +29,7 @@ int main(int argc, char** argv)
 {
 
 //Define array length
-int len = 10;
+int len1 = 10;
 
 //Define pointer array
 int *a;
