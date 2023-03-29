@@ -29,19 +29,19 @@ int main(int argc, char** argv)
 {
 
 //Define array length
-int len = 10;
+int len1 = 10;
 
 //Define pointer array
 int *a;
 
 //Define dynamic array
-a = new int[len];
+a = new int[len1];
 
 //This command for generate number with random
 srand((unsigned)time(NULL));
 
 //Get array value with randome value
-for (int i=0; i<len; ++i)
+for (int i=0; i<len1; ++i)
 {
 
 a[i] = rand()%30+1; //30 for get number in poriod of 0 ~ 30
@@ -52,7 +52,7 @@ a[i] = rand()%30+1; //30 for get number in poriod of 0 ~ 30
 
 cout<<"Show array1 Before sort : "<<endl;
 
-for(int i = 0; i<len; ++i)
+for(int i = 0; i<len1; ++i)
 {
     cout<<"a["<<i<<"] = "<<a[i];
     cout<<endl;
@@ -64,13 +64,13 @@ cout<<endl<<endl<<"--------------------------------------"<<endl<<endl;
 
 //selection sort
 
-selection_sort(a , len);
+selection_sort(a , len1);
 
 //show array after sort 
 
 cout<<"Show array1 after sort : "<<endl;
 
-for(int i = 0; i<len; ++i)
+for(int i = 0; i<len1; ++i)
 {
     cout<<"a["<<i<<"] = "<<a[i];
     cout<<endl;
