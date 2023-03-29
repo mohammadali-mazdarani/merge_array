@@ -20,6 +20,8 @@ void swap(int& a,int& b);
 
 void selection_sort(int *x,int size);
 
+int *merge(int v1[], int len1, int v2[], int len2);
+
 //--------------------------
 //micro
 //---------------------
@@ -29,7 +31,7 @@ int main(int argc, char** argv)
 {
 
 //Define array length
-int len1 = 10;
+int len1 = 5;
 
 //Define pointer array
 int *a;
@@ -54,8 +56,7 @@ cout<<"Show array1 Before sort : "<<endl;
 
 for(int i = 0; i<len1; ++i)
 {
-    cout<<"a["<<i<<"] = "<<a[i];
-    cout<<endl;
+cout<<setw(12)<<a[i];
 }
 
 //sepwrator
@@ -72,8 +73,9 @@ cout<<"Show array1 after sort : "<<endl;
 
 for(int i = 0; i<len1; ++i)
 {
-    cout<<"a["<<i<<"] = "<<a[i];
-    cout<<endl;
+
+cout<<setw(12)<<a[i];
+
 }
 
 
@@ -87,7 +89,7 @@ cout<<endl<<endl<<"--------------------------------------"<<endl<<endl;
 cout<<endl<<endl<<"--------------------------------------"<<endl<<endl;
 
 //Define array2 length
-int len2 = 5;
+int len2 = 3;
 
 //Define pointer array
 int *b;
@@ -112,8 +114,9 @@ cout<<"Show array2 Before sort : "<<endl;
 
 for(int i = 0; i<len2; ++i)
 {
-    cout<<"b["<<i<<"] = "<<b[i];
-    cout<<endl;
+
+cout<<setw(12)<<b[i];
+
 }
 
 //sepwrator
@@ -130,9 +133,52 @@ cout<<"Show array2 after sort : "<<endl;
 
 for(int i = 0; i<len2; ++i)
 {
-    cout<<"b["<<i<<"] = "<<b[i];
-    cout<<endl;
+
+cout<<setw(12)<<b[i];
+
 }
+
+//---------------------------------
+
+//create array3 that merge to array1 and array2
+
+//sepwrator
+
+cout<<endl<<endl<<"--------------------------------------"<<endl<<endl;
+//sepwrator
+
+cout<<endl<<endl<<"--------------------------------------"<<endl<<endl;
+
+//Declare pointer merge array and new length of merge array
+
+int *c , len3;
+
+//Create new merge array
+c = merge(a , len1 , b , len2);
+
+//Define len3
+
+len3 = len1 + len2;
+
+cout<<"Merged array :"<<endl;
+
+for(int i = 0; i<len3; ++i)
+{
+
+cout<<setw(12)<<c[i];
+
+}
+
+cout<<endl<<endl;
+
+delete []a;
+delete []b;
+delete []c;
+
+
+
+
+
 
 getch();
 }
@@ -187,6 +233,62 @@ for( ; x<end; ++x)
 
 }
 
+}
 
+//Create function for merge arrays
+
+int *merge(int v1[], int len1, int v2[], int len2)
+{
+
+//Create space legth of len1 & len2
+
+int *a;
+a = new int[len1 + len2];
+
+//variable i container len1
+int i = 0;
+
+//variable j container len2
+int j = 0;
+
+//variable k container len1+len2
+
+int k = 0;
+
+for( ;i<len1 && j<len2 ; ++k) 
+{
+if (v1[i] <= v2[j])
+{
+    a[k] = v1[i++];
+    
+}
+
+else
+
+{
+
+    a[k] = v2[j++];
+    
+}
 
 }
+
+if(i < len1)
+{
+
+while( i < len1 )
+{
+    a[k++] = v1[i++];   
+}
+}
+else
+{
+while(j < len2)
+a[k++] = v2[j++];
+}
+
+return a;
+}
+
+
+
